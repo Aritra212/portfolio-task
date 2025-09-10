@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dynamic Portfolio Dashboard
 
-## Getting Started
+A portfolio dashboard built with **Next.js, TypeScript, Tailwind CSS, and shadcn/ui** that displays live stock data including **CMP, P/E Ratio**. The base data comes from an Excel sheet, which is converted into a static JSON and enriched with live financial data using the Yahoo Finance API.
 
-First, run the development server:
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the repo
+
+   ```bash
+   git clone git@github.com:Aritra212/portfolio-task.git
+   cd portfolio-task
+   ```
+
+2. Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Create environment file
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   Copy env.example → .env
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run development server
 
-## Learn More
+```bash
+pnpm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open http://localhost:3000 in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚡ Features
 
-## Deploy on Vercel
+- Displays holdings in a table view with stock details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Fetches Current Market Price (CMP), P/E Ratio dynamically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Calculates Investment, Present Value, Gain/Loss, and Portfolio %.
+
+- Grouping by sectors like Financials, Tech, Consumer, Power, Pipes, and Others.
+
+---
+
+## 🛠️ Challenges Faced
+
+Extracting data from Excel and converting it into clean JSON with sector categories.
+
+Handling missing fields like P/E Ratio and Earnings (not in Excel, fetched via API).
+
+Getting reliable CMP and P/E values from Yahoo Finance API (type issues, inconsistent data).
+
+---
+
+## 📂 Tech Stack
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS + shadcn/ui
+
+Yahoo-Finance2
